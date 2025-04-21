@@ -1,21 +1,24 @@
+// This is a manifest file for a Chrome extension that extracts profile information and screenshots from Bumble.
+// It uses Manifest V3 and includes permissions for active tab access and scripting.
+// The extension runs a content script on Bumble's website and has web-accessible resources for additional scripts.
 {
   "manifest_version": 3,
-  "name": "Bumble API Sniffer",
+  "name": "Bumble Sniffer",
   "version": "1.0",
-  "description": "Intercepts Bumble recs and saves data + photos",
+  "description": "Extracts visible profile info and screenshots from Bumble",
   "permissions": ["scripting", "activeTab"],
-  "host_permissions": ["https://*.bumble.com/*"],
+  "host_permissions": ["https://am1.bumble.com/*"],
   "content_scripts": [
     {
-      "matches": ["https://*.bumble.com/*"],
+      "matches": ["https://am1.bumble.com/*"],
       "js": ["inject.js"],
       "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["interceptor.js", "html2canvas.min.js"],
-      "matches": ["https://*.bumble.com/*"]
+      "resources": ["domScraper.js", "html2canvas.min.js"],
+      "matches": ["https://am1.bumble.com/*"]
     }
   ],
   "icons": {
