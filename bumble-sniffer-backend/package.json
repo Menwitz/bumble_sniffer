@@ -1,0 +1,12 @@
+{
+    "name": "bumble-sniffer-backend",
+    "version": "1.0.0",
+    "main": "server.js",
+    "type": "module",
+    "dependencies": {
+        "express": "^4.21.2",
+        "mkdirp": "^1.0.4",
+        "multer": "^1.4.5-lts.2",
+        "node-fetch": "^3.3.2"
+    }
+}
